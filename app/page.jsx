@@ -7,17 +7,31 @@ export default function Home() {
   const { state } = useContext(AppContext);
 
   return (
-    <div className="container">
+    <div>
       <AppBar />
-      <main className="main">
-        <UrlBox />
-        {state.thumbs.length ? <Preview /> : ""}
-        {state.selection_mode === true ? (
-          <Selection images={state.thumbs} />
-        ) : (
-          ""
-        )}
-      </main>
+      <header>
+        {/* Your header content goes here */}
+        <h1>Welcome to SlideShare Downloader</h1>
+      </header>
+      <nav>
+        {/* Your navbar content goes here */}
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          {/* Add more navigation links as needed */}
+        </ul>
+      </nav>
+      <div className="container">
+        <main className="main">
+          <UrlBox />
+          {state.thumbs.length ? <Preview /> : ""}
+          {state.selection_mode === true ? (
+            <Selection images={state.thumbs} />
+          ) : (
+            ""
+          )}
+        </main>
+      </div>
       <footer className="footer_wrapper">
         <div className="footer">
           <span>&copy; 2024 &#183; SlideShare Downloader</span>
